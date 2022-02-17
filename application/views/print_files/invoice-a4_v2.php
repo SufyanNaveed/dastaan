@@ -329,7 +329,7 @@
     echo '<tr>
 
               <td colspan="2" class="blank"> </td>
-              <td colspan="2" class="total-line"> Amount Paid </td>
+              <td colspan="2" class="total-line"> Advance Amount  </td>
               <td class="total-value"><div id="total">' . amountExchange($invoice['pamnt'], $invoice['multi'],$invoice['loc']) . '</div></td>
           </tr>';
     echo '<tr>
