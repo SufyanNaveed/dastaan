@@ -201,11 +201,39 @@
                                                  aria-labelledby="heading5" aria-expanded="true">
                                                 <div class="card-content">
                                                     <ul>
-                                                        <li><a class="dropdown-item"
-                                                               href="<?php echo base_url(); ?>settings/warehouse"><i
-                                                                        class="ft-chevron-right"></i> <?php echo $this->lang->line('Default') . ' ' . $this->lang->line('Warehouse') ?>
-                                                            </a></li>
+                                                        <li>
+                                                            <a class="dropdown-item"
+                                                               href="<?php echo base_url(); ?>settings/warehouse"><i class="ft-chevron-right"></i> <?php echo $this->lang->line('Default') . ' ' . $this->lang->line('Warehouse') ?>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item"
+                                                               href="<?php echo base_url(); ?>settings/discship"><i class="ft-chevron-right"></i> <?php echo $this->lang->line('Discount') . ' & ' . $this->lang->line('Shipping') ?>
+                                                            </a>
+                                                        </li>
 
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-header p-0 pb-1 border-0 mt-1" id="heading6" role="tab">
+                                                <a class=" text-uppercase black" data-toggle="collapse"
+                                                   data-parent="#accordionWrap1" href="#accordion6"
+                                                   aria-controls="accordion6"><i
+                                                            class="fa fa-scissors"></i><?php echo $this->lang->line('Tax') . ' ' . $this->lang->line('Settings') ?>
+                                                </a>
+                                            </div>
+                                            <div class="card-collapse collapse mb-1 " id="accordion6" role="tabpanel"
+                                                 aria-labelledby="heading6" aria-expanded="true">
+                                                <div class="card-content">
+                                                    <ul>
+                                                        <li><a class="dropdown-item"
+                                                               href="<?php echo base_url(); ?>settings/tax"><i
+                                                                        class="ft-chevron-right"></i><?php echo $this->lang->line('Tax') ?>
+                                                            </a></li>
+                                                        <li><a class="dropdown-item"
+                                                               href="<?php echo base_url(); ?>settings/taxslabs"><i
+                                                                        class="ft-chevron-right"></i> <?php echo $this->lang->line('Other') . ' ' . $this->lang->line('Tax') . ' ' . $this->lang->line('Settings') ?>
+                                                            </a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -560,6 +588,47 @@
                                                     data-toggle="dropdown"><?= $this->lang->line('Clients Transactions'); ?></a>
                                 </li>
                             </ul>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="dropdown nav-item" data-menu="dropdown">
+                    <a class="dropdown-toggle nav-link" href="#" data-toggle="dropdown">
+                        <i class="ft-file-text"></i><span><?php echo $this->lang->line('HRM') ?></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu"><a
+                                    class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                        class="ft-users"></i><?php echo $this->lang->line('Employees') ?></a>
+                            <ul class="dropdown-menu">
+                                <li data-menu=""><a class="dropdown-item" href="<?php echo base_url(); ?>employee"
+                                                    data-toggle="dropdown"><?php echo $this->lang->line('Employees') ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>employee/permissions"
+                                                    data-toggle="dropdown"><?= $this->lang->line('Permissions'); ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>employee/salaries"
+                                                    data-toggle="dropdown"><?= $this->lang->line('Salaries'); ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>employee/attendances"
+                                                    data-toggle="dropdown"><?= $this->lang->line('Attendance'); ?></a>
+                                </li>
+                                <li data-menu=""><a class="dropdown-item"
+                                                    href="<?php echo base_url(); ?>employee/holidays"
+                                                    data-toggle="dropdown"><?= $this->lang->line('Holidays'); ?></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li data-menu="">
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>employee/departments"><i
+                                        class="icon-folder"></i><?php echo $this->lang->line('Departments'); ?></a>
+                        </li>
+                        <li data-menu="">
+                            <a class="dropdown-item" href="<?php echo base_url(); ?>employee/payroll"><i
+                                        class="icon-notebook"></i><?php echo $this->lang->line('Payroll'); ?></a>
                         </li>
 
                     </ul>
