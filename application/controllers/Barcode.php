@@ -16,7 +16,6 @@
  * ***********************************************************************
  */
 
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Barcode Extends CI_Controller
