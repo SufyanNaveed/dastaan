@@ -504,7 +504,7 @@ class Customers_model extends CI_Model
          else
                return 0;
     }
-    public function tailoringCustomerAdd($vCustomerID,$ref_no, $basic_info_id, $book_date,$t_date,$d_date,$is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
+    public function tailoringCustomerAdd($vCustomerID,$ref_no, $basic_info_id, $book_date,$t_date,$d_date, $cutter_name, $karigar_name, $quantity, $is_suiting,$is_shirts,$is_shalwarqameez,$is_english,$is_urdu,
     $cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,$p3_waistcoat_length,$waistcoat_length,
     $princecoat_length,$sherwani_length,$longcoat_length,$chester_length, $armhole,            
     $pLength,$pInLength,$pWaist,$pHip,$pThigh,$pBottom,$pKnee,                
@@ -532,7 +532,10 @@ class Customers_model extends CI_Model
                     'reference_id'=>$ref_no,
                     'booking_date' => $book_date,
                     'trial_date'=>$t_date,
-                    'd_date' => $d_date,
+                    'd_date' => $d_date, 
+                    'cutter_name' => $cutter_name,
+                    'karigar_name' => $karigar_name,
+                    'quantity' => $quantity,
                     'instrucations' => $instrucation,
                     'shirt_inst' => $shirt_inst,
                     'shalwar_inst' => $shalwar_inst,
@@ -588,7 +591,7 @@ class Customers_model extends CI_Model
                     'is_button' => $is_button,                   
                     'is_metalic_button' => $is_metalic_button                    
                 ); 
-                if($is_suiting)
+                //if($is_suiting)
                 $this->db->insert('customer_coat_size',$data);
                        
                     
@@ -605,7 +608,7 @@ class Customers_model extends CI_Model
                     'pant_bottom' => $pBottom,
                     'pant_knee' => $pKnee
                 );
-                if($is_suiting)
+                //if($is_suiting)
                 $this->db->insert('customer_pant_size',$data);
                         
 
@@ -679,7 +682,7 @@ class Customers_model extends CI_Model
                     'front_pocket_ins' => $front_pocket_ins,
                     'shalwar_pocket_ins' => $shalwar_pocket_ins
                 );
-                 if($is_shalwarqameez || $is_shirts)
+                // if($is_shalwarqameez || $is_shirts)
                 $this->db->insert('customer_kmz_shl',$data);
 
                 
@@ -759,7 +762,7 @@ class Customers_model extends CI_Model
                 return true;
    }
    
-    public function addNew($id,$ref_no,$book_date,$t_date,$d_date,$name,$mobile,$is_suiting,$is_shirts,$is_shalwarqameez, 
+    public function addNew($id,$ref_no,$book_date,$t_date,$d_date,$name,$cutter_name, $karigar_name, $quantity, $mobile,$is_suiting,$is_shirts,$is_shalwarqameez, 
             $is_english,$is_urdu,$cSleeves,$cShoulder,$cHalfBack,$cCrossBack,$cChest,$cWaist,$cHips,$cBicep,$cForearm,$cNeck,$cLength,
             $p3_waistcoat_length,$waistcoat_length,$princecoat_length,$sherwani_length,$longcoat_length,$chester_length,
             $armhole,            
@@ -792,6 +795,9 @@ class Customers_model extends CI_Model
                     'booking_date' => $book_date,
                     'trial_date'=>$t_date,
                     'd_date' => $d_date,
+                    'cutter_name' => $cutter_name,
+                    'karigar_name' => $karigar_name,
+                    'quantity' => $quantity,
                     'instrucations' => $instrucation,
                     'shirt_inst' => $shirt_inst,
                     'shalwar_inst' => $shalwar_inst,

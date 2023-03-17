@@ -112,6 +112,27 @@
                                                         </div> 
                                                     </div>
                                                 </div>
+
+                                                <div class="form-group row mt-1">
+                                                    <label class="col-sm-4 col-form-label" for="name">Cutter Name</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control required margin-bottom b_input" name="cutter_name" id="cutter_name" value="<?php echo $thiscustomer['cutter_name'] ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mt-1">
+                                                    <label class="col-sm-4 col-form-label" for="name">Karigar Name</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="text" class="form-control required margin-bottom b_input" name="karigar_name" id="karigar_name" value="<?php echo $thiscustomer['karigar_name'] ?>">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row mt-1">
+                                                    <label class="col-sm-4 col-form-label" for="name">Quantity</label>
+                                                    <div class="col-sm-7">
+                                                        <input type="number" class="form-control required margin-bottom b_input" name="quantity" id="quantity" value="<?php echo $thiscustomer['quantity'] ?>">
+                                                    </div>
+                                                </div>
                                                 <!-- <div class="form-group row  mt-1">
                                                     <label class="col-sm-4 col-form-label" for="name">Select Language:</label>
                                                     <div class="col-md-7 select_product">

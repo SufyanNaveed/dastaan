@@ -731,7 +731,7 @@ class Customers extends CI_Controller {
         $vPDF = $this->input->get('ignore_pdf') == NULL ? true : false;
         $data['id'] = $tid;
 
-//        $data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
+        //        $data['invoice'] = $this->invocies->invoice_details($tid, $this->limited);
 
         $data['nap'] = $this->customers->details($cid);
 
@@ -1018,6 +1018,9 @@ class Customers extends CI_Controller {
         $t_date = date('Y-m-d', strtotime($t_date));
 
         $name = $this->input->post('customer_name', true);
+        $cutter_name = $this->input->post('cutter_name', true);
+        $karigar_name = $this->input->post('karigar_name', true);
+        $quantity = $this->input->post('quantity', true);
         $mobile = $this->input->post('mobile', true);
 
         $is_suiting = false;
@@ -1319,7 +1322,8 @@ class Customers extends CI_Controller {
             $pamnt = $total;
         }
 
-        $this->customers->addNew($id, $ref_no, $book_date, $t_date, $d_date, $name, $mobile, $is_suiting, $is_shirts, $is_shalwarqameez,
+        echo '<pre>'; print_r($_POST); exit;
+        $this->customers->addNew($id, $ref_no, $book_date, $t_date, $d_date, $name, $cutter_name, $karigar_name, $quantity, $mobile, $is_suiting, $is_shirts, $is_shalwarqameez,
                 $is_english, $is_urdu, $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength,
                 $p3_waistcoat_length, $waistcoat_length, $princecoat_length, $sherwani_length, $longcoat_length, $chester_length,
                 $armhole,
@@ -1841,6 +1845,9 @@ class Customers extends CI_Controller {
         $t_date = date('Y-m-d', strtotime($t_date));
 
         $name = $this->input->post('customer_name', true);
+        $cutter_name = $this->input->post('cutter_name', true);
+        $karigar_name = $this->input->post('karigar_name', true);
+        $quantity = $this->input->post('quantity', true);
         $mobile = $this->input->post('mobile', true);
 
         $is_english = false;
@@ -2287,8 +2294,8 @@ class Customers extends CI_Controller {
                     $pamnt = $total;
                 }
 
-
-                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, 0,$book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
+                //echo '<pre>'; print_r($_POST); exit;
+                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, 0,$book_date, $t_date, $d_date, $cutter_name, $karigar_name, $quantity, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
                         $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength, $p3_waistcoat_length, $waistcoat_length,
                         $princecoat_length, $sherwani_length, $longcoat_length, $chester_length, $armhole,
                         $pLength, $pInLength, $pWaist, $pHip, $pThigh, $pBottom, $pKnee,
@@ -2314,7 +2321,7 @@ class Customers extends CI_Controller {
 
     public function updatecolthingCustomer() {
 
-        //print_r(json_encode($this->input->post()));exit;
+        // print_r(json_encode($this->input->post('cChest')));exit;
         //delete old data
         $this->customers->delete($this->input->post('customer_id'));
 
@@ -2343,6 +2350,10 @@ class Customers extends CI_Controller {
         $t_date = date('Y-m-d', strtotime($t_date));
 
         $name = $this->input->post('customer_name', true);
+        $cutter_name = $this->input->post('cutter_name', true);
+        $karigar_name = $this->input->post('karigar_name', true);
+        $quantity = $this->input->post('quantity', true); 
+        
         $mobile = $this->input->post('mobile', true);
 
         $is_english = false;
@@ -2379,7 +2390,7 @@ class Customers extends CI_Controller {
                 $instrucation = "";
                 $shirt_inst = "";
                 $shalwar_inst = "";
-//                echo $i. '<br>'; 
+                //echo $i. '<br>'; 
                 $cSleeves = '';
                 $cShoulder = '';
                 $cHalfBack = '';
@@ -2500,7 +2511,7 @@ class Customers extends CI_Controller {
                 $front_pocket_ins = '';
                 $shalwar_pocket_ins = '';
 
-                if ($is_suiting) {
+                //if ($is_suiting) {
                     /* Get  coat/waist coat size */
 
                     foreach ($cSleeve as $thisIndex => $thisItem)
@@ -2593,9 +2604,9 @@ class Customers extends CI_Controller {
                     $instrucation = $this->input->post("inst[" . $vSuitingCountIndex . "]");
                     $cSleeve[$vSuitingCountIndex] = 0;
                     $vSuitingCount--;
-                }
+                //}
 
-                if ($is_shirts) {
+                //if ($is_shirts) {
                     /* Get Shirt size */
 
                     foreach ($aShirtLength as $thisIndex => $thisItem)
@@ -2647,8 +2658,8 @@ class Customers extends CI_Controller {
                     $shirt_inst = $this->input->post("shirt_inst[" . $vShirtCountIndex . "]");
                     $aShirtLength[$vShirtCountIndex] = 0;
                     $vShirtCount--;
-                }
-                if ($is_shalwarqameez) {
+                //}
+                //if ($is_shalwarqameez) {
                     /* Get kamiz size */
                     foreach ($akmzLength as $thisIndex => $thisItem)
                         if ($thisItem) {
@@ -2763,7 +2774,7 @@ class Customers extends CI_Controller {
                     $shalwar_inst = $this->input->post("shalwar_inst[" . $vKmzCountIndex . "]");
                     $akmzLength[$vKmzCountIndex] = 0;
                     $vShalwarKamezCount--;
-                }
+               // }
 
                 //add into invoice table
                 $ptype = "Cash";
@@ -2797,7 +2808,7 @@ class Customers extends CI_Controller {
                 }
 
 
-                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $basic_info_id, $book_date, $t_date, $d_date, $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
+                $this->customers->tailoringCustomerAdd($vCustomerID, $ref_no, $basic_info_id, $book_date, $t_date, $d_date,$cutter_name, $karigar_name, $quantity,  $is_suiting, $is_shirts, $is_shalwarqameez, $is_english, $is_urdu,
                         $cSleeves, $cShoulder, $cHalfBack, $cCrossBack, $cChest, $cWaist, $cHips, $cBicep, $cForearm, $cNeck, $cLength, $p3_waistcoat_length, $waistcoat_length,
                         $princecoat_length, $sherwani_length, $longcoat_length, $chester_length, $armhole,
                         $pLength, $pInLength, $pWaist, $pHip, $pThigh, $pBottom, $pKnee,
