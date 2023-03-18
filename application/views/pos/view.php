@@ -115,8 +115,17 @@
                         </ul>
 
                     </div>
+                    <?php 
+                        $d_date = ''; if($nap != ''&& $nap) $d_date = dateformat($nap['d_date']); 
+                        $trial_date = ''; if($nap != ''&& $nap) $trial_date = dateformat($nap['trial_date']); 
+                    ?>
                     <div class="offset-md-3 col-md-3 col-sm-12 text-xs-center text-md-left">
-                        <?php echo '<p><span class="text-muted">' . $this->lang->line('Invoice Date') . '  :</span> ' . dateformat($invoice['invoicedate']) . '</p> <p><span class="text-muted">' . $this->lang->line('Due Date') . ' :</span> ' . dateformat($invoice['invoiceduedate']) . '</p>  <p><span class="text-muted">' . $this->lang->line('Terms') . ' :</span> ' . $invoice['termtit'] . '</p> <p><span class="text-muted">Trial Date:</span> ' . dateformat($nap['trial_date']) . '</p> <p><span class="text-muted">Delivery Date:</span> ' . dateformat($nap['d_date']) . '</p>';
+                        <?php echo '<p>
+                        <span class="text-muted">' . $this->lang->line('Invoice Date') . '  :</span> ' . 
+                        dateformat($invoice['invoicedate']) . '</p> <p><span class="text-muted">' . $this->lang->line('Due Date') . ' :</span> ' . 
+                        dateformat($invoice['invoiceduedate']) . '</p>  <p><span class="text-muted">' . $this->lang->line('Terms') . ' :</span> ' . 
+                        $invoice['termtit'] . '</p> <p><span class="text-muted">Trial Date:</span> ' . $trial_date . '</p> 
+                        <p><span class="text-muted">Delivery Date:</span> ' .$d_date . '</p>';
                         ?>
                     </div>
                 </div>
