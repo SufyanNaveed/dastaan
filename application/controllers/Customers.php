@@ -570,6 +570,9 @@ class Customers extends CI_Controller {
             $nap['trial_date'] = $this->input->post('t_date');
             $nap['customer_name'] = $this->input->post('customer_name');
             $nap['d_date'] = $this->input->post('d_date');
+            $nap['cutter_name'] = $this->input->post('cutter_name');
+            $nap['karigar_name'] = $this->input->post('karigar_name');
+            $nap['quantity'] = $this->input->post('quantity');
             $nap['is_suiting'] = $is_suiting;
             $nap['is_shirts'] = $is_shirts;
             $nap['is_shalwarqameez'] = $is_shalwarqameez;

@@ -520,6 +520,23 @@
                     </tr>
                 </table>
             </td>
+
+            <td class="myw">
+                <table class="top_sum">
+                    <tr>
+                        <td width="130px">Kutter Name:</td>
+                        <td><?php echo isset($nap[0]['cutter_name']) ? $nap[0]['cutter_name'] : ""; ?></td>
+                    </tr>
+                    <tr>
+                        <td width="130px">Karigar Name:</td>
+                        <td><?php echo isset($nap[0]['karigar_name']) ? $nap[0]['karigar_name'] : ""; ?></td>
+                    </tr>
+                    <tr>
+                        <td width="130px">Quantity:</td>
+                        <td><?php echo isset($nap[0]['quantity']) ? $nap[0]['quantity'] : ""; ?></td>
+                    </tr>
+                </table>
+            </td>
         </tr>
     </table>
     <?php
