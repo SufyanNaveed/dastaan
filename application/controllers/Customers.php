@@ -779,11 +779,11 @@ class Customers extends CI_Controller {
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $customer_basic_info['reference_id'];
+                $row[] = $customer_basic_info ? $customer_basic_info['reference_id'] : '';
                 $row[] = '<a href="customers/CustomerView?id=' . $customers->id . '">' . $customers->name . '</a>';
                 $row[] = amountExchange($customers->total - $customers->pamnt, 0, $this->aauth->get_user()->loc);
-                $row[] = $customer_basic_info['booking_date'];
-                $row[] = $customer_basic_info['d_date'];
+                $row[] = $customer_basic_info ? $customer_basic_info['booking_date']: '';
+                $row[] = $customer_basic_info ? $customer_basic_info['d_date'] : '';
                 $row[] = $customers->phone;
                 // $row[] = '<a href="customers/tailor?id='.$customers->id .'" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Tailor View</a> <a href="customers/CustomerView?id='.$customers->id.'" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' .'Customer View</a> <a href="customers/addNewCustomer?id=' . $customers->id . '" class="btn btn-primary btn-sm"><span class="fa fa-pencil"></span>Add New</a> <a href="#" data-object-id="' . $customers->id . '" class="btn btn-danger btn-sm delete-object"><span class="fa fa-trash"></span></a>';
                 // $btns = '<a href="customers/tailor?id=' . $customers->id . '" class="btn btn-secondary btn-sm"><span class="fa fa-eye"></span>  ' . 'Tailor View</a> <a href="customers/CustomerView?id=' . $customers->id . '" class="btn btn-info btn-sm"><span class="fa fa-eye"></span>  ' . 'Customer View</a>';
